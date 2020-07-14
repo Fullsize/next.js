@@ -16,6 +16,7 @@
     "classnames": "^2.2.6",
     "next": "^9.4.4",
     "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"

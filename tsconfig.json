@@ -21,7 +21,9 @@
     "paths": {
       "@*": [
         "src/*"
-      ]
+      ],
+      "@img*":["public/img/*"],
+      "@svg*":["public/svg/*"]
     },
     "jsx": "preserve"
   },

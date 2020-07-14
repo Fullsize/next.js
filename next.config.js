@@ -1,7 +1,9 @@
 const withPlugins = require('next-compose-plugins');
+const path=require('path');
+// css 相关配置
 const withCSS = require('@zeit/next-css');
 const cssLoaderGetLocalIdent = require('css-loader/lib/getLocalIdent.js');
-module.exports =withPlugins([withCSS({
+const cssPage=[withCSS,{
 	cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
@@ -14,10 +16,16 @@ module.exports =withPlugins([withCSS({
 			return cssLoaderGetLocalIdent(context, localIdentName, localName, options);
 		},
   }
-}),],{
+}]
+
+// 图片相关
+const withImages = require('next-images');
+const imagePage=[withImages,{
+	inlineImageLimit: 16384,
+
+}]
+	
+module.exports =withPlugins([...cssPage,...imagePage],{
 	pageExtensions: ['jsx', 'js', 'ts', 'tsx'],
-	distDir: 'build',
-	webpack(config,options){
-		
-	}
+	distDir: 'build'
 }) 
