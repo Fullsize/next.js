@@ -10,5 +10,7 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": ["babel-plugin-styled-components",["react-css-modules",{
+    "generateScopedName": "[local]___[hash:base64:5]"
+  }]]
 }
