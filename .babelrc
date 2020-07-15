@@ -10,7 +10,25 @@
       }
     ]
   ],
-  "plugins": ["babel-plugin-styled-components",["react-css-modules",{
-    "generateScopedName": "[local]___[hash:base64:5]"
-  }]]
+  "plugins": [
+    "babel-plugin-styled-components",
+    [
+      "react-css-modules",
+      {
+        "generateScopedName": "[local]___[hash:base64:5]"
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ]
 }

@@ -1,15 +1,19 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import a from '@img/time.jpeg';
-const Header=dynamic(()=>import('@/components/Header'));
-function HomePage() {
-  return (
+import { inject } from 'mobx-react';
+const Header = dynamic(() => import('@/components/Header'));
+function HomePage(props: any) {
+	console.log(props.name);
+	return (
 		<div>
 			<Header />
-			<h1>Welcome to Next.js!2</h1>
-			<img src={a} alt=""/>
+			<h1>{props.name}</h1>
+			{/* <img src={a} alt=""/> */}
 		</div>
 	)
 }
 
-export default HomePage;
+export default inject((stores: any) => ({
+	name: stores.userStore.name
+}))(HomePage);

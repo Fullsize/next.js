@@ -24,8 +24,21 @@ const imagePage=[withImages,{
 	inlineImageLimit: 16384,
 
 }]
-	
+
+// 打包消除生产环境debug
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports =withPlugins([...cssPage,...imagePage],{
 	pageExtensions: ['jsx', 'js', 'ts', 'tsx'],
-	distDir: 'build'
+	distDir: 'build',
+	webpack(config,options){
+		config.optimization.minimizer.push(new UglifyJsPlugin({
+			uglifyOptions: {
+				compress: {
+					drop_debugger: true,
+					drop_console: true
+				}
+			}
+		}))
+		return config;
+	}
 }) 
