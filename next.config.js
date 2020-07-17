@@ -27,7 +27,7 @@ const imagePage=[withImages,{
 
 // 打包消除生产环境debug
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-module.exports =withPlugins([...cssPage,...imagePage],{
+module.exports =withPlugins([cssPage,imagePage],{
 	pageExtensions: ['jsx', 'js', 'ts', 'tsx'],
 	distDir: 'build',
 	webpack(config,options){
