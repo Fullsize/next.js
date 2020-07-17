@@ -2,35 +2,35 @@ import React, { useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import a from '@svg/smiling.svg';
 import { inject } from 'mobx-react';
-import Swiper from 'swiper';
+import Swiper from '@/container/swiper';
 import './index.css'
-import 'swiper/swiper-bundle.css';
+
 const Header = dynamic(() => import('@/components/Header'));
 function HomePage(props: any) {
-	let bannerRef = useRef(null);
+	const params={
+		autoplay:true
+	}
 	useEffect(() => {
-		new Swiper(bannerRef.current,{
-			autoplay:true
-		});
-		console.log(props.name)
+		console.log(props)
 	}, [])
 	return (
 		<div>
 			<Header />
-			<div  styleName="banner" className="swiper-container" ref={bannerRef}>
-				<div   className="swiper-wrapper">
-					<div styleName="banner-item" className="swiper-slide">
-						<img src="/img/1.jpg" alt="" />
-					</div>
-					<div styleName="banner-item" className="swiper-slide">
-						<img src="/img/2.jpg" alt="" />
-					</div>
-					<div styleName="banner-item" className="swiper-slide">
-						<img src="/img/3.jpg" alt="" />
-					</div>
+			<div styleName="banner">
+			<Swiper {...params}>
+				<div styleName="banner-item">
+					<img src="/img/1.jpg" alt="" />
 				</div>
-			</div>
+				<div styleName="banner-item">
+					<img src="/img/2.jpg" alt="" />
+				</div>
+				<div styleName="banner-item">
+					<img src="/img/3.jpg" alt="" />
+				</div>
+			</Swiper>
 
+			</div>
+			
 		</div>
 	)
 }
