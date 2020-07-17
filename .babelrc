@@ -15,7 +15,8 @@
     [
       "react-css-modules",
       {
-        "generateScopedName": "[local]___[hash:base64:5]"
+        "generateScopedName": "[local]___[hash:base64:5]",
+        "autoResolveMultipleImports":true
       }
     ],
     [

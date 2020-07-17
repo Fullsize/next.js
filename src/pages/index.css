@@ -1,0 +1,15 @@
+
+.banner {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+	max-height: 675px;
+}
+
+.banner-item {
+	width: 100%;
+}
+
+.banner-item img {
+	width: 100%;
+}

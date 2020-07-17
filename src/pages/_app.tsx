@@ -2,9 +2,9 @@ import React from 'react';
 import App, { AppContext } from 'next/app';
 import { Provider } from 'mobx-react';
 import { initializeStore } from '../stores/index';
-import 'antd/dist/antd.css';
+
 // main.tsx
-export default function MyApp(props: AppContext) {
+export default function MyApp(props: any) {
   const { Component, pageProps,initialMobxState } = props;
   const isServer = typeof window === 'undefined';
   const mobxStore=isServer ? initialMobxState : initializeStore(initialMobxState)
