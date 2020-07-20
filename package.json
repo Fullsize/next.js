@@ -17,6 +17,10 @@
   "lint-staged": {
     "src/*": [
       "prettier --write"
+    ],
+    "src/*.css": [
+      "prettier --write",
+      "stylelint --fix"
     ]
   },
   "author": "",
@@ -51,6 +55,8 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
     "typescript": "^3.9.6",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
