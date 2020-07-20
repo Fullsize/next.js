@@ -6,7 +6,18 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev:local": "next -p 3002"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*": [
+      "prettier --write"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +48,9 @@
     "@types/react-css-modules": "^4.6.2",
     "babel-plugin-react-css-modules": "^5.2.6",
     "babel-plugin-styled-components": "^1.10.7",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "2.0.5",
     "typescript": "^3.9.6",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
