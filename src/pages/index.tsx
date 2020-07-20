@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import a from '@svg/smiling.svg';
-import { inject } from 'mobx-react';
+import { inject,observer } from 'mobx-react';
 import Swiper from '@/container/swiper';
 import './index.css'
 
