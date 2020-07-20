@@ -3,3 +3,5 @@ public
 package.json
 tsconfig.json
 yarn-error.log
+.next
+.vscode
