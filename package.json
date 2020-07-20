@@ -18,7 +18,7 @@
     "src/*": [
       "prettier --write"
     ],
-    "src/*.css": [
+    "src/*.{c,sc,le}ss": [
       "prettier --write",
       "stylelint --fix"
     ]
@@ -57,6 +57,7 @@
     "prettier": "2.0.5",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
+    "stylelint-webpack-plugin": "^2.1.0",
     "typescript": "^3.9.6",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }

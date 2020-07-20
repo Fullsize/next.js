@@ -27,6 +27,10 @@ const imagePage=[withImages,{
 
 // 打包消除生产环境debug
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+// styleint
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
 module.exports =withPlugins([cssPage,imagePage],{
 	pageExtensions: ['jsx', 'js', 'ts', 'tsx'],
 	distDir: 'build',
@@ -38,6 +42,10 @@ module.exports =withPlugins([cssPage,imagePage],{
 					drop_console: true
 				}
 			}
+		}))
+		// styleint
+		config.plugins.push(new StylelintPlugin({
+			files:["**/*.{c,sc,le}ss",""]
 		}))
 		return config;
 	}
