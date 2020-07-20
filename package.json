@@ -15,10 +15,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "prettier --write"
     ],
-    "*.css": [
+    "**/*.css": [
       "prettier --write",
       "stylelint --fix"
     ]
