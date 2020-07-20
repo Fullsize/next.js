@@ -16,11 +16,13 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ],
     "**/*.css": [
       "prettier --write",
-      "stylelint --fix"
+      "stylelint --fix",
+      "git add"
     ]
   },
   "author": "",
