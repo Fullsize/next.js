@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { inject } from 'mobx-react';
 import Swiper from '@/container/swiper';
 import './index.css';
 
@@ -15,7 +16,8 @@ function HomePage(props: any) {
     <div>
       <Header />
       {props.name}
-      <div styleName="banner">
+      <button onClick={() => props.setName('1111')}>修改名字</button>
+      {/* <div styleName="banner">
         <Swiper {...params}>
           <div styleName="banner-item">
             <img src="/img/1.jpg" alt="" />
@@ -27,13 +29,11 @@ function HomePage(props: any) {
             <img src="/img/3.jpg" alt="" />
           </div>
         </Swiper>
-      </div>
+      </div> */}
     </div>
   );
 }
-HomePage.getInitialProps = ({ mobxStore }) => {
-  return {
-    name: mobxStore.userStore.name,
-  };
-};
-export default HomePage;
+export default inject((stores: any) => ({
+  name: stores.userStore.name,
+  setName: stores.userStore.setName,
+}))(HomePage);
