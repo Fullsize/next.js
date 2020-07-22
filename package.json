@@ -21,8 +21,9 @@
       "prettier --write",
       "git add"
     ],
-    "./src/**/*.css": [
-      "stylelint --fix"
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write"
     ]
   },
   "author": "",
