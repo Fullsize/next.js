@@ -61,6 +61,16 @@ module.exports = withPlugins([cssPage, imagePage], {
         files: ['**/*.{c,sc,le}ss'],
       })
     );
+
+    // eslint
+    config.module.rules.push({
+      enforce: 'pre',
+      test: /.(js|jsx|ts|tsx)$/,
+      loader: 'eslint-loader',
+      include: path.resolve(__dirname, '/src'),
+      exclude: [path.resolve(__dirname, '/node_modules')],
+    });
+
     return config;
   },
 });
