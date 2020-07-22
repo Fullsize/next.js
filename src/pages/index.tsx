@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { inject } from 'mobx-react';
 import Swiper from '@/container/swiper';
 import './index.css';
 
@@ -10,11 +9,12 @@ function HomePage(props: any) {
     autoplay: true,
   };
   useEffect(() => {
-    console.log(props);
+    console.log(props.name);
   }, []);
   return (
     <div>
       <Header />
+      {props.name}
       <div styleName="banner">
         <Swiper {...params}>
           <div styleName="banner-item">
@@ -31,6 +31,9 @@ function HomePage(props: any) {
     </div>
   );
 }
-export default inject((stores: any) => ({
-  name: stores.userStore.name,
-}))(HomePage);
+HomePage.getInitialProps = ({ mobxStore }) => {
+  return {
+    name: mobxStore.userStore.name,
+  };
+};
+export default HomePage;
