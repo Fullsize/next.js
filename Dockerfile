@@ -1,4 +1,4 @@
-FROM node:14.5.0-stretch as builds
+FROM node:14.5.0-stretch
 ARG NODE_DNV
 WORKDIR /app
 COPY . . 
