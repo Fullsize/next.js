@@ -17,7 +17,7 @@ function HomePage(props: any) {
       <Header />
       {props.name}
       <button onClick={() => props.setName('1111')}>修改名字</button>
-      {/* <div styleName="banner">
+      <div styleName="banner">
         <Swiper {...params}>
           <div styleName="banner-item">
             <img src="/img/1.jpg" alt="" />
@@ -29,7 +29,7 @@ function HomePage(props: any) {
             <img src="/img/3.jpg" alt="" />
           </div>
         </Swiper>
-      </div> */}
+      </div>
     </div>
   );
 }
