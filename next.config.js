@@ -56,11 +56,11 @@ module.exports = withPlugins([cssPage, imagePage], {
       })
     );
     // styleint
-    config.plugins.push(
-      new StylelintPlugin({
-        files: ['**/*.{c,sc,le}ss'],
-      })
-    );
+    // config.plugins.push(
+    //   new StylelintPlugin({
+    //     files: ['**/*.{c,sc,le}ss'],
+    //   })
+    // );
 
     // eslint
     config.module.rules.push({
